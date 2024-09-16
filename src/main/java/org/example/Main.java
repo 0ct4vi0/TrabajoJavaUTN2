@@ -5,74 +5,47 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-//  1)
-//        double num;
-//        System.out.print("ingrese un numero ");
-//        num = sc.nextDouble();
-//
-//        // Convertir el número decimal a diferentes tipos de datos
-//        short valorShort = (short) num;
-//        int valorInt = (int) num;
-//        long valorLong = (long) num;
-//        String valorString = Double.toString(num);
-//        float valorFloat = (float) num;
-//
-//        // Mostrar los resultados de las conversiones
-//        System.out.println("Número original en double: " + num);
-//        System.out.println("Convertido a short: " + valorShort);
-//        System.out.println("Convertido a int: " + valorInt);
-//        System.out.println("Convertido a long: " + valorLong);
-//        System.out.println("Convertido a String: " + valorString);
-//        System.out.println("Convertido a float: " + valorFloat);
 //--------------------------------------------------------------------------
-// 2)   Rta:   Ocurriria un error en el porgrama y falla en la resolucion,
-//             para solucionarlo haria lo siguiente:
-//
-//        int num;
-//        do  {
-//            System.out.print("ingrese un numero");
-//            num = sc.nextInt();
-//            if (num <=30){
-//                System.out.print("elnumero ingresado esta dentro del rango");
-//                break;
-//            }else {
-//                System.out.print("EL NUMERO INGRESADO SE EXCEDE DEL RANGO ");
-//            }
-//        } while (num >30);
-//-----------------------------------------------------------------
+// 2)A- Cunado se le asigna un valor que esta fuera de rango de una variable, ocurre un desbordamiento
+//  (overflow) en el codigo y reduce su valor al minimo
+//        byte b = 127;
+//        System.out.println("Valor del byte antes del desbordeamiento: "+ b);
+//        b++;
+//        System.out.println("Valor del byte despues del desbordeamiento: "+ b);
 
-        int[] num2 = new int[3];
-        double numero;
-        int i;
-        System.out.print("Ingrese un número de 3 dígitos (100 - 999): ");
-        numero = sc.nextInt();
-        if (numero < 100 || numero > 999) {
-            System.out.println("Número inválido. Debe estar entre 100 y 999.");
-        } else {
-            double mod_numero, trunc_numero, suma_numero;
-            suma_numero = 0;
-            trunc_numero = 1;
-
-            while (trunc_numero > 0) {
-                mod_numero = numero % 10;
-                suma_numero = mod_numero + suma_numero;
-                trunc_numero = Math.floor(numero / 10);
-                numero = trunc_numero;
-            }
-            System.out.println("La suma de los dígitos es: " + suma_numero);
-        }
-    }
-//            for (i=1;i<=4;i++) {
-//                num2[i] = numero % 10;          // Último dígito
-//                num2[i] = (numero / 10) % 10;   // Dígito de la decena
-//                num2[i] = (numero / 100) % 10; // Dígito de la centena
-//            }
-//            for (i=1;i < 4;i++) {
-//                int suma;
-//                suma = num2[i]+ num2[i];
+//    B- Tambien puede ocurrir se genere un error en el codigo y este no termine de compilar
+//        int[] num;
+//        num= new int[3];
+//        for (int i=1;i<5; i++) {
+//            num[i]++;
+//        }
+//        for (int i=1;i<5; i++){
+//            System.out.println(num[i]);
+//        }
+//---------------------------------------------------------------------------
+//  7)
+//        System.out.println("ingrese una cadena de texto");
+//        String txt = sc.nextLine();
+//        int tamCadena = txt.length();
+//        int contVocal = 0;
+//        System.out.println("el tamaño de la cadena es: " + tamCadena);
+//        for (int i = 0; i < tamCadena; i++) {
+//            char Vocal = txt.charAt(i);
+//            if (Vocal == 'a' || Vocal == 'e' || Vocal == 'i' || Vocal == 'o' || Vocal == 'u' ||
+//                    Vocal == 'A' || Vocal == 'E' || Vocal == 'I' || Vocal == 'O' || Vocal == 'U') {
+//                contVocal++;
 //            }
 //        }
-//            // Mostrar el resultado
-//        System.out.println("La suma de los dígitos es: " + suma);
+//        System.out.println("La cantidad de vocales son: " + contVocal);
 
+//------------------------------------------------------------------------------------------
+//  12)
+//        System.out.println("ingrese una cadena de texto");
+//        String cadena = sc.nextLine();
+//        String extrac1 = cadena.substring(3,4);
+//        String extrac2 = cadena.substring(4,5);
+//        System.out.println("las palabras susstraidas son: "+ extrac1 + " y " + extrac2);
+//
+
+    }
 }
