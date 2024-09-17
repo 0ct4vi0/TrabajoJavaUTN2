@@ -1,6 +1,8 @@
 package org.example;
 import javax.swing.*;
 import java.io.*;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
@@ -45,7 +47,22 @@ public class Main {
 //        String extrac1 = cadena.substring(3,4);
 //        String extrac2 = cadena.substring(4,5);
 //        System.out.println("las palabras susstraidas son: "+ extrac1 + " y " + extrac2);
-//
 
+//-------------------------------------------------------------------------------------------
+//  17)
+        class FuncionesPrograma{
+            public static String getFechaString(Date fecha){
+                SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
+                return formatoFecha.format(fecha);
+            }
+        }
+//        class Principal{
+//            public static void main(String[] args) {
+                Date fechaActual = new Date();
+                String fechaCadena = FuncionesPrograma.getFechaString(fechaActual);
+                System.out.println("La fecha actual en formato cadena es: "+fechaCadena);
+//            }
     }
 }
+
+
